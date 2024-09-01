@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QRIS QR Code Modifier</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>QRIS QR Code Modifier</h1>
+        <div class="upload-section">
+            <label for="baseQR" class="file-upload">
+                Upload Base QR Code
+                <input type="file" id="baseQR" accept="image/*">
+                <span id="baseQRName" class="file-name">No file chosen</span>
+            </label>
+            <label for="victimQR" class="file-upload">
+                Upload Victim QR Code
+                <input type="file" id="victimQR" accept="image/*">
+                <span id="victimQRName" class="file-name">No file chosen</span>
+            </label>
+        </div>
+        <button id="generate" class="btn">Generate Altered QR Code</button>
+        <div class="preview-section">
+            <div class="preview-container">
+                <div class="preview-item">
+                    <h2>Base QR Code</h2>
+                    <canvas id="baseCanvas"></canvas>
+                </div>
+                <div class="preview-item">
+                    <h2>Victim QR Code</h2>
+                    <canvas id="victimCanvas"></canvas>
+                </div>
+                <div class="preview-item">
+                    <h2>Altered QR Code</h2>
+                    <canvas id="alteredCanvas"></canvas>
+                    <div id="downloadSection" style="display: none;">
+                        <a id="downloadAlteredQR" class="btn" download="altered_qr.png">Download Altered QR Code</a>
+                    </div>
+                    <div id="changes" class="changes-info"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        &copy; 2024 Tegar Sabila. All rights reserved.
+    </footer>
+
+    <script src="jquery.min.js"></script>
+    <script src="qrcode.min.js"></script>
+    <script src="jsQR.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
